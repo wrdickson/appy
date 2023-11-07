@@ -37,6 +37,8 @@ $f3->route('GET /autoload-options', 'Options_Controller->get_autoload_options');
 //  POS
 
 $f3->route('GET /pos-data', 'Pos_Controller->get_initial_data');
+$f3->route('GET /tax-types', 'Pos_Controller->get_tax_types');
+$f3->route('GET /payment-types', 'Pos_Controller->get_payment_types');
 
 //  Products
 $f3->route('POST /product-search-code', 'Product_Controller->search_products_by_code');

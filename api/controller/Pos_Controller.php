@@ -59,4 +59,40 @@ Class Pos_Controller {
 
     print json_encode($response);
   }
+
+  public function get_payment_types ( $f3 ) {
+    $perms = [ 'permission' => 3, 'role' => '' ];
+    //  the request should have 'Jwt' property in header with user's token
+    //  this throws an error if the token doesn't work OR user doesn't have permission
+    $f3auth = F3Auth::authorize_token( $f3, $perms );
+
+    $response = array();
+    //  payment type
+    $st = new DB\SQL\Mapper($f3->get('DB'),'pos_payment_type');
+    $all_payment_types = $st->find(array('is_active>?',0));
+    $response['payment_types'] = array();
+    foreach($all_payment_types as $payment_type){
+      array_push( $response['payment_types'], $payment_type->cast() );
+    }
+    print json_encode($response);
+
+  }
+
+  public function get_tax_types ( $f3 ) {
+    $perms = [ 'permission' => 3, 'role' => '' ];
+    //  the request should have 'Jwt' property in header with user's token
+    //  this throws an error if the token doesn't work OR user doesn't have permission
+    $f3auth = F3Auth::authorize_token( $f3, $perms );
+
+    $response = array();
+    //  tax_type
+    $st = new DB\SQL\Mapper($f3->get('DB'),'pos_tax_type');
+    $all_tax_types = $st->find(array('is_active>?',0));
+    $response['tax_types'] = array();
+    foreach($all_tax_types as $tax_type){
+      array_push( $response['tax_types'], $tax_type->cast() );
+    }
+
+    print json_encode($response);
+  }
 }

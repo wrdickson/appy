@@ -59,12 +59,12 @@
 <script setup>
   import { ref, computed, onMounted } from 'vue'
   import _ from 'lodash'
+  import SaleItemList from './SaleItemList.vue'
   import CustomerSelect from './CustomerSelect.vue'
   import ProductGroupSelect from './ProductGroupSelect.vue'
   import ProductSubgroupSelect from './ProductSubgroupSelect.vue'
   import ProductSelect from './ProductSelect.vue'
   import SaleDetail from './SaleDetail.vue'
-  import SaleItemList from './SaleItemList.vue'
   import posData  from './../data.js'
   import { useSaleStateMachine } from "./saleStateMachine.js"
 
@@ -160,7 +160,6 @@
   const addToSale = saleItem => {
     saleItems.value.push(saleItem)
     cancelSaleItem()
-
   }
   const cancelSaleItem = () => {
     selectedProductGroup.value = null
