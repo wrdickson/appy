@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-  import {optionsStore} from './../../../modules/options/store.js'
+  import {optionsStore} from '@modules/options/store.js'
   import SearchProductCode from './SearchProductCode.vue'
   import SaleDetail from './SaleDetail.vue'
   import SaleItemList from './SaleItemList.vue'
