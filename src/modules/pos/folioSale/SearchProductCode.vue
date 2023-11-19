@@ -29,7 +29,7 @@
     small
     v-model:current-page="currentPage"
     v-model:page-size="pageSize"
-    background layout="totaL, sizes, prev, pager, next" 
+    background layout="total, sizes, prev, pager, next" 
     :total="rowCount" 
     :page-sizes="[5,10,15,20,30]"
     size="small"

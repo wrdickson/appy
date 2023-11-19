@@ -36,7 +36,7 @@
 
 <script setup>
   import posData from './data.js'
-  import { authStore } from './../../modules/auth/store.js'
+  import { authStore } from '@/modules/auth/store.js'
   import { reactive, ref, computed, watch } from 'vue'
   import Dinero from 'dinero.js'
 
